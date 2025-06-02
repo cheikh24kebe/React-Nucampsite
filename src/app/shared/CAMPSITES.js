@@ -1,7 +1,7 @@
-import reactLakeImg from '../assets/img/react-lake.jpg';
-import chromeRiverImg from '../assets/img/chrome-river.jpg';
-import breadCrumbImg from '../assets/img/breadcrumb-trail.jpg';
-import reduxWoodsImg from '../assets/img/redux-woods.jpg';
+import reactLakeImg from '../img/react-lake.jpg';
+import chromeRiverImg from '../img/chrome-river.jpg';
+import breadCrumbImg from '../img/breadcrumb-trail.jpg';
+import reduxWoodsImg from '../img/redux-woods.jpg';
 
 export const CAMPSITES = [
     {
