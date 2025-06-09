@@ -1,10 +1,12 @@
-import breadCrumbImg from '../assets/img/breadcrumb-trail.jpg';
+import breadCrumbImg from '../img/breadcrumb-trail.jpg';
 //Photo by Jonny Caspari on Unsplash
-import weedsImg from '../assets/img/weeds.jpg';
+import weedsImg from '../img/weeds.jpg';
 // Photo by LoboStudio Hamburg on Unsplash
-import bootsImg from '../assets/img/boots.jpg';
+import bootsImg from '../img/boots.jpg';
 // Photo by Jonathan Gallegos on Unsplash
-import asyncImg from '../assets/img/mount-promise.jpg';
+import asyncImg from '../img/mount-promise.jpg';
+image: require('../img/boots.jpg')  
+
 
 export const PROMOTIONS = [
     {
