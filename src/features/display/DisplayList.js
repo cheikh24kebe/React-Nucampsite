@@ -1,22 +1,40 @@
-import { Col, Row } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 import DisplayCard from './DisplayCard';
+
 import { selectFeaturedCampsite } from '../campsites/campsitesSlice';
 import { selectFeaturedPromotion } from '../promotions/promotionsSlice';
+import { selectFeaturedPartner } from '../partners/partnersSlice';
 
 const DisplayList = () => {
-    const items = [selectFeaturedCampsite(), selectFeaturedPromotion()];
+    const items = [
+        {
+            id: 0,
+            featuredItem: selectFeaturedCampsite()
+        },
+        {
+            id: 1,
+            featuredItem: selectFeaturedPromotion()
+        },
+        {
+            id: 2,
+            featuredItem: selectFeaturedPartner()
+        }
+    ];
 
     return (
         <Row>
-            {items.map((item, idx) => {
-                return (
-                    <Col md className='m-1' key={idx}>
-                        <DisplayCard item={item} />
+            {items
+                .filter((item) => item.featuredItem)
+                .map((item) => (
+                    <Col xs='12' md='4' key={item.id}>
+                        <DisplayCard item={item.featuredItem} />
                     </Col>
-                );
-            })}
+                ))}
         </Row>
+    
+
     );
 };
 
+console.log('Partner:', selectFeaturedPartner());
 export default DisplayList;

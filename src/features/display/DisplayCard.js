@@ -1,13 +1,22 @@
-import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
+import {
+    Card,
+    CardImg,
+    CardBody,
+    CardTitle,
+    CardText
+} from 'reactstrap';
 
 const DisplayCard = ({ item }) => {
-    const { image, name, description } = item;
+    if (!item) return null;
+
     return (
         <Card>
-            <CardImg src={image} alt={name} />
+            <CardImg src={item.image} alt={item.name} />
             <CardBody>
-                <CardTitle>{name}</CardTitle>
-                <CardText>{description}</CardText>
+                <CardTitle>{item.name}</CardTitle>
+                <CardText>
+                    {item.designation ? item.designation : item.description}
+                </CardText>
             </CardBody>
         </Card>
     );

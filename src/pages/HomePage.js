@@ -1,5 +1,5 @@
 import { Container } from 'reactstrap';
-// import DisplayList from '../features/display/DisplayList';
+import DisplayList from '../features/display/DisplayList';
 import SubHeader from '../components/SubHeader';
 import { Row } from 'reactstrap';
 import Featured from '../features/Featured';
@@ -9,9 +9,10 @@ const HomePage = () => {
         <Container>
             <SubHeader current='Home' />
             <Row className='row-content'>
-                <Featured />
+                <DisplayList />
             </Row>
         </Container>
+
     );
 };
 
