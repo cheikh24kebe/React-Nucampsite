@@ -1,10 +1,16 @@
 import { Container } from 'reactstrap';
-import DisplayList from '../features/display/DisplayList';
+// import DisplayList from '../features/display/DisplayList';
+import SubHeader from '../components/SubHeader';
+import { Row } from 'reactstrap';
+import Featured from '../features/Featured';
 
 const HomePage = () => {
     return (
         <Container>
-            <DisplayList />
+            <SubHeader current='Home' />
+            <Row className='row-content'>
+                <Featured />
+            </Row>
         </Container>
     );
 };
