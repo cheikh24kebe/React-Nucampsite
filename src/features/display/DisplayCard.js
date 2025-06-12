@@ -1,10 +1,4 @@
-import {
-    Card,
-    CardImg,
-    CardBody,
-    CardTitle,
-    CardText
-} from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
 const DisplayCard = ({ item }) => {
     if (!item) return null;
