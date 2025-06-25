@@ -1,20 +1,20 @@
 import { Col } from 'reactstrap';
 import Partner from './Partner';
+import { useSelector } from 'react-redux';
 import { selectAllPartners } from './partnersSlice';
 
 const PartnersList = () => {
-    const partners = selectAllPartners();
-
+    const partners = useSelector(selectAllPartners);
     return (
-        <Col className='mt-4'>
-            {partners.map((partner) => {
-                return (
-                    <div className='d-flex mb-5' key={partner.id}>
+        <div className='container'>
+            <div className='row'>
+                {partners.map((partner) => (
+                    <Col md='5' className='m-4' key={partner.id}>
                         <Partner partner={partner} />
-                    </div>
-                );
-            })}
-        </Col>
+                    </Col>
+                ))}
+            </div>
+        </div>
     );
 };
 
