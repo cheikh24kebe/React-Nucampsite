@@ -1,23 +1,20 @@
-import { CAMPSITES } from '../app/shared/CAMPSITES';
-import { Card, CardImg, CardBody, CardTitle, CardText, Row, Col } from 'reactstrap';
+import { useSelector } from 'react-redux';
+import { selectFeaturedCampsite } from './campsites/campsitesSlice';
 
 const Featured = () => {
-    const featuredCampsites = CAMPSITES.slice(0, 2);
+    const featuredCampsite = useSelector(selectFeaturedCampsite);
+    console.log('Featured campsite:', featuredCampsite); // ⬅️ add this line
+
+    if (!featuredCampsite) {
+        return <div>Loading...</div>;
+    }
 
     return (
-        <Row>
-            {featuredCampsites.map((campsite) => (
-                <Col md='6' key={campsite.id}>
-                    <Card className='m-2'>
-                        <CardImg src={campsite.image} alt={campsite.name} />
-                        <CardBody>
-                            <CardTitle tag='h5'>{campsite.name}</CardTitle>
-                            <CardText>{campsite.description}</CardText>
-                        </CardBody>
-                    </Card>
-                </Col>
-            ))}
-        </Row>
+        <div>
+            <h2>{featuredCampsite.name}</h2>
+            <img src={featuredCampsite.image} alt={featuredCampsite.name} />
+            <p>{featuredCampsite.description}</p>
+        </div>
     );
 };
 
